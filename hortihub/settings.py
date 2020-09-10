@@ -26,7 +26,7 @@ SECRET_KEY = '3up3aw-a1n73oq7#^q!gy189zp4p@l7knldwl6y#nq!8e!7t(p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['example.com','http://example.com', '*', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'feed',
     'hortihome',
     'actions',
-    'notifications'
+    'notifications',
+    'comments',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,8 @@ MIDDLEWARE = [
     'accounts.login_middleware.LoginRequiredMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'hortihub.urls'

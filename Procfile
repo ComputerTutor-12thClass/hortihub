@@ -1,1 +1,0 @@
-web: gunicorn hortihub.wsgi --log-file -
